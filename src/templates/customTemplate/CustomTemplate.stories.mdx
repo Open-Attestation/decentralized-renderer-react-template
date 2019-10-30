@@ -1,0 +1,21 @@
+import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
+import { CustomTemplate } from "./customTemplate";
+import { customTemplateCertificate } from "../sample";
+
+<Meta title="MDX|CustomTemplate" component={CustomTemplate} />
+
+# CustomTemplate component
+
+<Description of={CustomTemplate} />
+
+# Props
+
+<Props of={CustomTemplate} />
+
+# Usage
+
+<Preview withSource>
+  <Story name="basic sample">
+    <CustomTemplate document={customTemplateCertificate} />
+  </Story>
+</Preview>
