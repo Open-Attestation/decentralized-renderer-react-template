@@ -1,4 +1,5 @@
 import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
+import { object } from '@storybook/addon-knobs';
 import { CustomTemplate } from "./customTemplate";
 import { customTemplateCertificate } from "../sample";
 
@@ -14,8 +15,8 @@ import { customTemplateCertificate } from "../sample";
 
 # Usage
 
-<Preview withSource>
+<Preview>
   <Story name="basic sample">
-    <CustomTemplate document={customTemplateCertificate} />
+    <CustomTemplate document={object("document", customTemplateCertificate)}/>
   </Story>
 </Preview>
