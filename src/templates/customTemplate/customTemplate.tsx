@@ -8,5 +8,10 @@ const style = css`
 `;
 
 export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate>> = ({ document }) => {
-  return <pre css={style}>{JSON.stringify(document, null, 2)}</pre>;
+  return (
+    <>
+      <h1>{document?.foo?.title ?? "Default title"}</h1>
+      <pre css={style}>{JSON.stringify(document, null, 2)}</pre>
+    </>
+  );
 };
