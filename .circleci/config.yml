@@ -19,4 +19,4 @@ jobs:
           command: npm run build
       - run:
           name: release
-          command: npx semantic-release
+          command: npx --no-install semantic-release

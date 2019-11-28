@@ -15,16 +15,15 @@
     "react-hot-loader": "^4.12.18"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --mode production",
-    "dev": "NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack --progress --mode production",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "lint": "eslint . --ext .ts,.tsx,.mdx --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o docs",
     "test": "jest --ci",
     "test:coverage": "npm run test -- --coverage",
-    "test:watch": "npm run test -- --watch",
-    "semantic-release": "semantic-release"
+    "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -49,6 +48,7 @@
     "babel-loader": "8.0.6",
     "brotli-webpack-plugin": "1.1.0",
     "compression-webpack-plugin": "3.0.0",
+    "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-jest": "^23.0.4",
