@@ -67,6 +67,7 @@ You will need to provide credentials for github and npm.
 - documents samples contains fake data to test the templates you build. You can create a typescript interface to make sure that your template uses the correct expected document
   - create a type describing the kind of document you expect to render (for instance check `CustomTemplateCertificate` in `src/sample.tsx`)
   - create a template consuming that interface, using the `TemplateProps` helper from `@govtechsg/decentralized-renderer-react-components (for instance check the template in`src/templates/customTemplate/customTemplate.tsx`)
+- shared components are located in `src/core` folder. For instance you can find a watermark example that will be displayed when printing the document
 - feel free to remove whatever you dont need
 
 ## Changing stuff
