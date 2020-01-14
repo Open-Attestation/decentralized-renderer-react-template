@@ -22,6 +22,14 @@ Make sure to edit the following files according to your module's info:
 - LICENSE
 - add your own template (in `src/templates` folder) and configure correctly the template registry (in `src/templates/index.tsx` file)
 
+## Testing the templates in an integrated environment
+
+This template provides a simple application that is able to render documents built for the current renderer. To use it:
+1. Open `integration/index.tsx` file and edit the `documents` property of the `App` component to suit your needs (provide any document that is available locally, whether it's a javascript, JSON or typescript document).
+1. Start your renderer: `npm run dev`
+1. Start the local application: `npm run example:application`
+1. Head to `http://localhost:3010/`, you should see the configured component during step 1. 
+
 ## Commands
 
 ```sh
