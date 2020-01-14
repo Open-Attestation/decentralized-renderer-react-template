@@ -15,6 +15,7 @@
     "react-hot-loader": "^4.12.18"
   },
   "scripts": {
+    "example:application": "webpack-dev-server --config ./integration/webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "lint": "eslint . --ext .ts,.tsx,.mdx --max-warnings 0",
