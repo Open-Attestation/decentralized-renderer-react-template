@@ -11,12 +11,12 @@ const style = css`
   }
 `;
 
-export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & { className: string }> = ({
+export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & { className?: string }> = ({
   document,
-  className
+  className = ""
 }) => {
   return (
-    <div css={style} className={className}>
+    <div css={style} className={className} id="custom-template">
       <PrintWatermark />
       <h1>{document?.foo?.title ?? "Default title"}</h1>
       <pre>{JSON.stringify(document, null, 2)}</pre>

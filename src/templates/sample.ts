@@ -10,8 +10,13 @@ export interface CustomTemplateCertificate extends Document {
 
 export const customTemplateCertificate: CustomTemplateCertificate = {
   foo: {
-    title: "Title"
+    title: "Bar is awesome"
   },
   name: "John Doe",
-  institute: "Institute of John Doe"
+  institute: "Institute of John Doe",
+  $template: {
+    name: "custom",
+    type: "EMBEDDED_RENDERER",
+    url: "http://localhost:3000"
+  }
 };

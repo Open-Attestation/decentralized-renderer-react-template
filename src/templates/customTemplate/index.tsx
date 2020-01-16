@@ -8,10 +8,10 @@ export const templates = [
     template: CustomTemplate
   },
   {
-    id: "custom-red",
-    label: "Red Custom Template",
+    id: "custom-blue",
+    label: "Blue Custom Template",
     template: styled(CustomTemplate)`
-      color: red;
+      color: blue;
     `
   }
 ];

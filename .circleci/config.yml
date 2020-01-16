@@ -1,8 +1,8 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: 'circleci/node:latest'
+      - image: "circleci/node:latest-browsers"
     steps:
       - checkout
       - run:
@@ -18,5 +18,5 @@ jobs:
           name: build
           command: npm run build
       - run:
-          name: release
-          command: npx --no-install semantic-release
+          name: integration
+          command: npm run integration:headless
