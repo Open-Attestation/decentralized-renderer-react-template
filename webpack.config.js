@@ -53,7 +53,6 @@ module.exports = {
       cacheGroups: {
         vendors: {
           test: /\/node_modules\//,
-          filename: "vendor.[hash:7].js",
           name: "vendor",
           chunks: "all"
         }
