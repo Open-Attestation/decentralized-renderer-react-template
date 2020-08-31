@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { customTemplateCertificate } from "../templates/sample";
+import { customTemplateCertificate } from "../templates/samples";
 import percySnapshot from "@percy/testcafe";
 
 // assign certificate to a variable otherwise there is an error ... ReferenceError: sample_1 is not defined
