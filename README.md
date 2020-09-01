@@ -107,6 +107,7 @@ $ npm uninstall qrcode.react @types/qrcode.react
 ```
 
 - Remove `examples` folder completely
+- Remove line 5 with `../example` context from `.storybook/config.js` (so that storybook won't look for example files)
 
 ## License
 
