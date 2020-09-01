@@ -46,11 +46,13 @@ $ npm run example:application # start embedded application
   - create a type describing the kind of document you expect to render (for instance check `CustomTemplateCertificate` in `src/sample.tsx`)
   - create a template consuming that interface, using the `TemplateProps` helper from `@govtechsg/decentralized-renderer-react-components (for instance check the template in`src/templates/customTemplate/customTemplate.tsx`)
 - shared components are located in `src/core` folder. For instance you can find a watermark example that will be displayed when printing the document
+- examples of how to add a watermark and qr code are located in `examples/template`
 - feel free to remove whatever you dont need
 
 ## Testing the templates in an integrated environment
 
 This template provides a simple application that is able to render documents built for the current renderer. To use it:
+
 1. Open `application/index.tsx` file and edit the `documents` property of the `App` component to suit your needs (provide any document that is available locally, whether it's a javascript, JSON or typescript document).
 1. Start your renderer: `npm run dev`
 1. Start the local application: `npm run example:application`
@@ -61,6 +63,7 @@ This template provides a simple application that is able to render documents bui
 This repository has been configured to run end-to-end tests using `Testcafe`. Visualisation testing is also configured through `Percy` and tests are ran through `Testcafe`.
 
 To setup `Percy`, you will need a token that you can find on Percy's dashboard:
+
 - For local development, type `export PERCY_TOKEN=<PERCY_TOKEN>` before running `npm run integration`.
 - For [**CircleCI**](https://docs.percy.io/docs/circleci), add an environment variable `PERCY_TOKEN` with the token value.
 
@@ -94,6 +97,16 @@ $ npm uninstall @emotion/core @emotion/styled @emotion/babel-preset-css-prop
 - Remove `@emotion/babel-preset-css-prop` from Babel presets (configuration is made in package.json file)
 - Remove `@emotion/core` from Typescript configuration (in tsconfig.json file)
 - Remove `.storybook/webpack.config.js` (file created only for emotion css property support in storybook)
+
+### Removing Examples
+
+- Uninstall npm packages
+
+```sh
+$ npm uninstall qrcode.react @types/qrcode.react
+```
+
+- Remove `examples` folder completely
 
 ## License
 
