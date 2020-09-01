@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { customTemplateCertificate } from "../src/templates/sample";
+import { customTemplateCertificate } from "../src/templates/samples";
 import React from "react";
 import { App } from "./app";
 
