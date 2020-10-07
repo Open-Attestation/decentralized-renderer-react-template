@@ -2,8 +2,9 @@ import { TemplateRegistry } from "@govtechsg/decentralized-renderer-react-compon
 import { templates as customTemplate } from "./customTemplate";
 import styled from "@emotion/styled";
 import { CustomTemplate } from "./customTemplate/customTemplate";
+import { CustomTemplateCertificate } from "./samples";
 
-export const registry: TemplateRegistry<any> = {
+export const registry: TemplateRegistry<CustomTemplateCertificate> = {
   custom: customTemplate,
   red: [
     {
