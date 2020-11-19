@@ -19,7 +19,7 @@ export const WatermarkTemplate: FunctionComponent<TemplateProps<CustomTemplateCe
   return (
     <div css={style} className={className} id="custom-template">
       <PrintWatermark />
-      <div className="A4">
+      <div>
         <h1>{document?.foo?.title ?? "Default title"}</h1>
         <pre>{JSON.stringify(document, null, 2)}</pre>
       </div>
