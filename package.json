@@ -70,11 +70,12 @@
     "qrcode.react": "^1.0.0",
     "react-docgen-typescript-loader": "^3.4.0",
     "testcafe": "^1.7.1",
-    "typescript": "^3.7.4",
+    "typescript": "^4.2.3",
     "webpack": "4.41.2",
     "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "whatwg-fetch": "^3.6.2"
   },
   "license": "Apache-2.0",
   "babel": {
@@ -200,7 +201,10 @@
     "moduleNameMapper": {
       "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/fileMock.js"
-    }
+    },
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ]
   },
   "prettier": {
     "printWidth": 120
