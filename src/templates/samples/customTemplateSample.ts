@@ -1,4 +1,4 @@
-import { v2 } from "@govtechsg/decentralized-renderer-react-components";
+import { v2 } from "@govtechsg/open-attestation";
 
 export interface CustomTemplateCertificate extends v2.OpenAttestationDocument {
   name: string;

@@ -7,7 +7,8 @@
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
-    "@govtechsg/decentralized-renderer-react-components": "3.4.0",
+    "@govtechsg/decentralized-renderer-react-components": "3.4.1",
+    "@govtechsg/open-attestation": "^4.7.3",
     "@hot-loader/react-dom": "^16.11.0",
     "debug": "4.1.1",
     "react": "^16.12.0",
