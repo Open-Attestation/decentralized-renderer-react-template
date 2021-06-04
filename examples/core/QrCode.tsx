@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React, { FunctionComponent } from "react";
 import { css } from "@emotion/react";
 import QRCode from "qrcode.react";
