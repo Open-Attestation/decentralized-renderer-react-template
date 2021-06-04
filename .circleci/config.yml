@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: install
-          command: npm install
+          command: npm ci
       - run:
           name: lint
           command: npm run lint
