@@ -10,8 +10,3 @@ declare module "*.svg" {
   const value: any;
   export default value;
 }
-
-declare module "@percy/testcafe" {
-  const value: any;
-  export default value;
-}

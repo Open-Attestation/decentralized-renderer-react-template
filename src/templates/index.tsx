@@ -12,7 +12,7 @@ export const registry: TemplateRegistry<CustomTemplateCertificate> = {
       label: "Red Custom Template",
       template: styled(CustomTemplate)`
         color: red;
-      `
-    }
-  ]
+      `,
+    },
+  ],
 };

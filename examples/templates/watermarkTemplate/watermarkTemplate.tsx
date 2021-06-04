@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import { CustomTemplateCertificate } from "../samples";
 import { PrintWatermark } from "../../core/PrintWatermark";
 
@@ -13,9 +14,11 @@ const style = css`
   }
 `;
 
-export const WatermarkTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & {
-  className?: string;
-}> = ({ document, className = "" }) => {
+export const WatermarkTemplate: FunctionComponent<
+  TemplateProps<CustomTemplateCertificate> & {
+    className?: string;
+  }
+> = ({ document, className = "" }) => {
   return (
     <div css={style} className={className} id="custom-template">
       <PrintWatermark />

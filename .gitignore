@@ -9,3 +9,4 @@ yarn.lock
 dist
 *.iml
 .idea
+docs

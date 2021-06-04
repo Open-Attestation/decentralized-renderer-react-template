@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import { CustomTemplateCertificate } from "../samples";
 
 const style = css`
@@ -13,7 +14,7 @@ const style = css`
 
 export const CustomTemplate: FunctionComponent<TemplateProps<CustomTemplateCertificate> & { className?: string }> = ({
   document,
-  className = ""
+  className = "",
 }) => {
   return (
     <div css={style} className={className} id="custom-template">

@@ -1,6 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import React, { FunctionComponent } from "react";
 import { TemplateProps } from "@govtechsg/decentralized-renderer-react-components";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 import { QrcodeTemplateSample } from "../samples";
 import { QrCode } from "../../core/QrCode";
 
@@ -13,9 +14,11 @@ const style = css`
   }
 `;
 
-export const QrcodeCertificateTemplate: FunctionComponent<TemplateProps<QrcodeTemplateSample> & {
-  className?: string;
-}> = ({ document, className = "" }) => {
+export const QrcodeCertificateTemplate: FunctionComponent<
+  TemplateProps<QrcodeTemplateSample> & {
+    className?: string;
+  }
+> = ({ document, className = "" }) => {
   const qrCodeUrl = document?.links?.self.href;
   return (
     <div css={style} className={className} id="custom-template">
