@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "typescript": { "configPath": "./tsconfig.json" }
+    "typescript": {
+      "configPath": "./tsconfig.json"
+    }
   }
 }
