@@ -14,10 +14,10 @@ ReactDOM.render(
           foo: "bar",
           $template: {
             ...customTemplateCertificate.$template,
-            name: "red"
-          }
-        }
-      }
+            name: "red",
+          },
+        },
+      },
     ]}
   />,
   document.getElementById("root")

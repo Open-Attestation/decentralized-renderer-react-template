@@ -60,12 +60,7 @@ This template provides a simple application that is able to render documents bui
 
 ## End-to-end and visualisation test
 
-This repository has been configured to run end-to-end tests using `Testcafe`. Visualisation testing is also configured through `Percy` and tests are ran through `Testcafe`.
-
-To setup `Percy`, you will need a token that you can find on Percy's dashboard:
-
-- For local development, type `export PERCY_TOKEN=<PERCY_TOKEN>` before running `npm run integration`.
-- For [**CircleCI**](https://docs.percy.io/docs/circleci), add an environment variable `PERCY_TOKEN` with the token value.
+This repository has been configured to run end-to-end tests using `Testcafe`.
 
 ## Features
 
@@ -76,7 +71,6 @@ To setup `Percy`, you will need a token that you can find on Percy's dashboard:
 - [**Babel**](https://babeljs.io/) - Write next generation JavaScript today.
 - [**Jest**](https://facebook.github.io/jest) - JavaScript testing framework used by Facebook.
 - [**Testcafe**](https://devexpress.github.io/testcafe/) - A node.js tool to automate end-to-end web testing.
-- [**Percy**](http://percy.io/) - Visualisation testing tool.
 - [**ESLint**](http://eslint.org/) - Make sure you are writing a quality code.
 - [**Prettier**](https://prettier.io/) - Enforces a consistent style by parsing your code and re-printing it.
 - [**Typescript**](https://www.typescriptlang.org/) - JavaScript superset, providing optional static typing
@@ -91,11 +85,11 @@ To setup `Percy`, you will need a token that you can find on Percy's dashboard:
 - Uninstall npm packages
 
 ```sh
-$ npm uninstall @emotion/core @emotion/styled @emotion/babel-preset-css-prop
+$ npm uninstall @emotion/react @emotion/styled @emotion/babel-preset-css-prop
 ```
 
 - Remove `@emotion/babel-preset-css-prop` from Babel presets (configuration is made in package.json file)
-- Remove `@emotion/core` from Typescript configuration (in tsconfig.json file)
+- Remove `@emotion/react` from Typescript configuration (in tsconfig.json file)
 - Remove `.storybook/webpack.config.js` (file created only for emotion css property support in storybook)
 
 ### Removing Examples

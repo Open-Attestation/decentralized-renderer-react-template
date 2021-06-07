@@ -5,13 +5,13 @@ export const templates = [
   {
     id: "custom",
     label: "Custom",
-    template: CustomTemplate
+    template: CustomTemplate,
   },
   {
     id: "custom-blue",
     label: "Blue Custom Template",
     template: styled(CustomTemplate)`
       color: blue;
-    `
-  }
+    `,
+  },
 ];

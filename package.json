@@ -2,84 +2,34 @@
   "name": "decentralized-renderer-react-template",
   "version": "0.0.0-development",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Open-Attestation/decentralized-renderer-react-template.git"
+  },
+  "license": "Apache-2.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "@govtechsg/decentralized-renderer-react-components": "3.4.1",
-    "@govtechsg/open-attestation": "^4.7.3",
-    "@hot-loader/react-dom": "^16.11.0",
-    "debug": "4.1.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-hot-loader": "^4.12.18"
-  },
   "scripts": {
     "build": "npm run check-types && cross-env NODE_ENV=production webpack --progress --mode production",
     "check-types": "tsc --sourceMap false --noEmit",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "example:application": "webpack-dev-server --config application/webpack.config.js",
-    "integration": "percy exec -- testcafe chrome src/**/*.spec.ts --ts-config-path ./tsconfig.json --app \"npm run dev\"",
-    "integration:headless": "percy exec -- testcafe chrome:headless src/**/*.spec.ts --ts-config-path ./tsconfig.json --app \"npm run dev\"",
-    "lint": "eslint . --ext .ts,.tsx,.mdx --max-warnings 0",
+    "integration": "testcafe chrome src/**/*.spec.ts --app \"npm run dev\"",
+    "integration:headless": "testcafe chrome:headless src/**/*.spec.ts --app \"npm run dev\"",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
     "lint:fix": "npm run lint -- --fix",
+    "prep": "npm run lint:fix && npm run check-types && npm run test",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o docs",
     "test": "jest --ci",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watch"
   },
-  "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.4.4",
-    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
-    "@babel/preset-typescript": "^7.7.2",
-    "@emotion/babel-preset-css-prop": "^10.0.23",
-    "@percy/testcafe": "^0.2.0",
-    "@storybook/addon-actions": "^5.2.6",
-    "@storybook/addon-docs": "^5.2.6",
-    "@storybook/addon-knobs": "^5.2.6",
-    "@storybook/addons": "^5.2.6",
-    "@storybook/react": "^5.2.6",
-    "@testing-library/react": "^9.3.2",
-    "@types/debug": "4.1.5",
-    "@types/jest": "^24.0.23",
-    "@types/qrcode.react": "^1.0.1",
-    "@types/react": "^16.9.11",
-    "@typescript-eslint/eslint-plugin": "^2.8.0",
-    "@typescript-eslint/parser": "^2.8.0",
-    "babel-jest": "24.9.0",
-    "babel-loader": "8.0.6",
-    "brotli-webpack-plugin": "1.1.0",
-    "compression-webpack-plugin": "3.0.0",
-    "cross-env": "^6.0.3",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-jest": "^23.0.4",
-    "eslint-plugin-mdx": "^1.6.3",
-    "eslint-plugin-prettier": "3.1.1",
-    "eslint-plugin-react": "7.16.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "eslint-plugin-testcafe-community": "^1.1.0",
-    "file-loader": "4.2.0",
-    "html-webpack-plugin": "3.2.0",
-    "jest": "24.9.0",
-    "prettier": "^1.19.1",
-    "qrcode.react": "^1.0.0",
-    "react-docgen-typescript-loader": "^3.4.0",
-    "testcafe": "^1.7.1",
-    "typescript": "^4.2.3",
-    "webpack": "4.41.2",
-    "webpack-bundle-analyzer": "^3.6.0",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
-    "whatwg-fetch": "^3.6.2"
-  },
-  "license": "Apache-2.0",
   "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-nullish-coalescing-operator",
+      "@babel/plugin-proposal-optional-chaining"
+    ],
     "presets": [
       [
         "@babel/preset-env",
@@ -92,10 +42,6 @@
       "@babel/preset-typescript",
       "@babel/preset-react",
       "@emotion/babel-preset-css-prop"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-nullish-coalescing-operator",
-      "@babel/plugin-proposal-optional-chaining"
     ]
   },
   "browserslist": [
@@ -106,35 +52,38 @@
     "last 1 Safari version",
     "IE >= 11"
   ],
+  "prettier": {
+    "printWidth": 120
+  },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
     "env": {
       "browser": true,
       "jest": true
     },
-    "extends": [
-      "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended",
-      "prettier/@typescript-eslint",
-      "prettier/react"
-    ],
-    "plugins": [
-      "react-hooks"
-    ],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "ecmaVersion": 2018,
-      "sourceType": "module",
       "ecmaFeatures": {
         "jsx": true
-      }
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
     },
     "settings": {
       "react": {
         "version": "detect"
       }
     },
+    "plugins": [
+      "react-hooks"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended",
+      "prettier"
+    ],
     "rules": {
+      "array-callback-return": "error",
       "@typescript-eslint/explicit-function-return-type": [
         "warn",
         {
@@ -142,12 +91,12 @@
           "allowTypedFunctionExpressions": true
         }
       ],
+      "@typescript-eslint/no-empty-function": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      "react/prop-types": "off",
-      "react/self-closing-comp": "error",
-      "array-callback-return": "error",
+      "react-hooks/exhaustive-deps": "error",
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "error"
+      "react/prop-types": "off",
+      "react/self-closing-comp": "error"
     },
     "overrides": [
       {
@@ -162,15 +111,6 @@
             }
           ]
         }
-      },
-      {
-        "files": [
-          "*.mdx"
-        ],
-        "extends": [
-          "plugin:mdx/overrides",
-          "plugin:mdx/recommended"
-        ]
       },
       {
         "files": [
@@ -198,20 +138,66 @@
   },
   "jest": {
     "coverageDirectory": "coverage",
-    "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.tsx?$",
     "moduleNameMapper": {
       "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/fileMock.js"
     },
     "setupFilesAfterEnv": [
       "./jest.setup.js"
-    ]
+    ],
+    "testEnvironment": "jest-environment-jsdom",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.tsx?$"
   },
-  "prettier": {
-    "printWidth": 120
+  "dependencies": {
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@govtechsg/decentralized-renderer-react-components": "^3.5.0",
+    "@govtechsg/open-attestation": "~5.1.3",
+    "@hot-loader/react-dom": "^17.0.1",
+    "debug": "^4.3.1",
+    "qrcode.react": "^1.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Open-Attestation/decentralized-renderer-react-template.git"
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@testing-library/react": "^11.2.7",
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.1",
+    "@types/qrcode.react": "^1.0.1",
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "babel-jest": "^27.0.2",
+    "babel-loader": "^8.2.2",
+    "brotli-webpack-plugin": "^1.1.0",
+    "compression-webpack-plugin": "^6.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testcafe-community": "^1.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.2",
+    "jest": "^27.0.4",
+    "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.3.1",
+    "testcafe": "^1.14.2",
+    "typescript": "^4.3.2",
+    "webpack": "^4.46.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
   }
 }

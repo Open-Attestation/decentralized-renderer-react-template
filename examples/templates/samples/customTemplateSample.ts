@@ -13,15 +13,15 @@ export const customTemplateCertificate: CustomTemplateCertificate = {
   institute: "Institute of John Doe",
   issuers: [
     {
-      name: "institute of blockchain"
-    }
+      name: "institute of blockchain",
+    },
   ],
   $template: {
     name: "custom",
     type: v2.TemplateType.EmbeddedRenderer,
-    url: "http://localhost:3000"
+    url: "http://localhost:3000",
   },
   foo: {
-    title: "Bar is awesome"
-  }
+    title: "Bar is awesome",
+  },
 };
