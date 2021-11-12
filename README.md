@@ -1,6 +1,6 @@
-# decentralized-renderer-react-template
-
 [![CircleCI](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template.svg?style=svg)](https://circleci.com/gh/Open-Attestation/decentralized-renderer-react-template)
+
+# React Template
 
 React boilerplate to write decentralize renderer.
 
