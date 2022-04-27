@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iFrame Rendering</title>
+  </head>
+  <script src="https://unpkg.com/penpal@5.3.0/dist/penpal.min.js"></script>
+  <body>
+    <button onclick="renderDocument(oaDocument)">
+      Render OA document
+    </button>
+    <iframe
+      id="iframe"
+      src="http://localhost:3000"
+      style="width: 100%; min-height: 800px; border: 0px; overflow: hidden;"
+    ></iframe>
+  </body>
+
+  <script type="text/javascript">
+    var iframe = document.getElementById("iframe");
+    var connection = Penpal.connectToChild({
+      iframe,
+    });
+
+    var renderDocument = function(cert) {
+      connection.promise.then(child => {
+        child.dispatch({
+          type: "RENDER_DOCUMENT",
+          payload: {
+            document: cert
+          }
+        });
+      });
+    };
+
+    var oaDocument = {
+      name: "John Doe",
+      institute: "Institute of John Doe",
+      issuers: [
+        {
+          name: "institute of blockchain"
+        }
+      ],
+      $template: {
+        name: "red",
+        type: "EMBEDDED_RENDERER",
+        url: "http://localhost:3000"
+      },
+      foo: {
+        title: "Bar is awesome"
+      }
+    }
+  </script>
+</html>

@@ -58,6 +58,12 @@ This template provides a simple application that is able to render documents bui
 1. Start the local application: `npm run example:application`
 1. Head to `http://localhost:3010/`, you should see the configured documents during step 1.
 
+## Testing the templates in vanilla HTML
+
+1. Start your renderer: `npm run dev`
+1. Start the local HTML: `npm run example:html`
+1. Head to `http://localhost:8080/`, you should see a button to render document and hit it.
+
 ## End-to-end and visualisation test
 
 This repository has been configured to run end-to-end tests using `Testcafe`. Visualisation testing is also configured through `Percy` and tests are ran through `Testcafe`.
