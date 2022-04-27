@@ -2,9 +2,9 @@ import { TemplateRegistry } from "@govtechsg/decentralized-renderer-react-compon
 import { templates as customTemplate } from "./customTemplate";
 import styled from "@emotion/styled";
 import { CustomTemplate } from "./customTemplate/customTemplate";
-import { CustomTemplateCertificate } from "./samples";
+import { CoveringLetterTemplates } from "./CoveringLetter";
 
-export const registry: TemplateRegistry<CustomTemplateCertificate> = {
+export const registry: TemplateRegistry<any> = {
   custom: customTemplate,
   red: [
     {
@@ -14,5 +14,6 @@ export const registry: TemplateRegistry<CustomTemplateCertificate> = {
         color: red;
       `
     }
-  ]
+  ],
+  COVERING_LETTER: CoveringLetterTemplates
 };

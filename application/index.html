@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>iFrame Rendering</title>
+  </head>
+  <script src="https://unpkg.com/penpal@5.3.0/dist/penpal.min.js"></script>
+  <body>
+    <button onclick="renderDocument(oaDocument)">
+      Render OA document
+    </button>
+    <iframe
+      id="iframe"
+      src="http://localhost:3000"
+      style="width: 100%; min-height: 800px; border: 0px; overflow: hidden;"
+    ></iframe>
+  </body>
+
+  <script type="text/javascript">
+    var iframe = document.getElementById("iframe");
+    var connection = Penpal.connectToChild({
+      iframe,
+    });
+
+    var renderDocument = function(cert) {
+      connection.promise.then(child => {
+        child.dispatch({
+          type: "RENDER_DOCUMENT",
+          payload: {
+            document: cert
+          }
+        });
+      });
+    };
+
+    var oaDocument = {
+      $template: {
+        type: "EMBEDDED_RENDERER",
+        name: "COVERING_LETTER",
+        url: "http://localhost:3000"
+      },
+      issuers: [
+        {
+          name: "abc",
+          documentStore: "0x1245e5B64D785b25057f7438F715f4aA5D965733"
+        }
+      ],
+      links: {
+        self: {
+          href:
+            "https://action.openattestation.com/?q=%7B%22type%22%3A%22DOCUMENT%22%2C%22payload%22%3A%7B%22uri%22%3A%22https%3A%2F%2Fapi-ropsten.tradetrust.io%2Fstorage%2F1df7a8b2-9998-44d0-acbb-d0598f883aba%22%2C%22key%22%3A%228ff52a5980543346784e16fd9834aeadc38c4bfe28394d3bb7449ada2f40efaf%22%2C%22permittedActions%22%3A%5B%22STORE%22%5D%2C%22redirect%22%3A%22https%3A%2F%2Fdev.tradetrust.io%2F%22%7D%7D"
+        }
+      },
+      name: "Covering Letter",
+      logo: "https://www.aretese.com/images/govtech-animated-logo.gif",
+      title: "Documents Bundle",
+      remarks: `Some very important documents in here for some submission.\n\nAnd it supports multiline!`
+    }
+  </script>
+</html>
