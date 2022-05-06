@@ -5,7 +5,7 @@
   </head>
   <script src="https://unpkg.com/penpal@5.3.0/dist/penpal.min.js"></script>
   <body>
-    <button onclick="init()">
+    <button onclick="renderDocument()">
       Render OA document
     </button>
     <div id="template-selector"></div>
@@ -66,10 +66,12 @@
     };
 
     const renderDocument = () => {
+      if (!frame) console.warn("frame connection not established.")
       frame.dispatch(renderDocumentAction);
     };
 
     const renderTemplateSelector = () => {
+      if (!frame) console.warn("frame connection not established.")
       frame.dispatch(getTemplatesAction).then((templates) => {
         templates.forEach((tab, index) => {
           const btn = document.createElement("button");
@@ -86,14 +88,9 @@
       });
     }
 
-    const init = () => {
-      if (!frame) console.warn("frame connection not established.")
-      renderDocument();
-      renderTemplateSelector();
-    }
-
     connection.promise.then(child => {
       frame = child;
+      renderTemplateSelector();
     });
   </script>
 </html>
