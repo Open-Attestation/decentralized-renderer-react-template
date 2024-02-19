@@ -1,6 +1,6 @@
 # React Template
 
-This is a React boilerplate to write the decentralize renderer.
+This is a React boilerplate to create the decentralize renderer.
 
 ## Installation
 
@@ -43,7 +43,7 @@ $ npm run example:application # start embedded application
 
 - The `index.ts` file contains the logic to communicate with the host embedding your renderer. You might not need to update this file.
 - The template registry configuration is located in the `src/templates/index.tsx` file.
-- Templates are located in the `src/templates` folder. You can add as many template as required and structure the code accordingly.
+- Templates are located in the `src/templates` folder. You can add as many templates as required and structure the code accordingly.
 - Document samples contain fake data to test the templates you build. You can create a TypeScript interface to make sure that your template uses the correct expected document:
   - Create a type describing the kind of document you expect to render (For instance, check `CustomTemplateCertificate` in `src/sample.tsx`).
   - Create a template consuming that interface, using the `TemplateProps` helper from `@govtechsg/decentralized-renderer-react-components` (For instance, check the template in the `src/templates/customTemplate/customTemplate.tsx` file).
@@ -144,5 +144,4 @@ $ npm uninstall qrcode.react @types/qrcode.react
 
 ## License
 
-The React template for the decentralized renderer is under the GPL-3.0 license.
-<!--Flag: Question here - according to the License in this repository, it is under Apache 2.0 license. It needs a double-check.-->
+The React template for the decentralized renderer is under the [Apache license, version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
