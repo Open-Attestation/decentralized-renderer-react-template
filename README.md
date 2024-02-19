@@ -98,14 +98,11 @@ npm run example:html
 
 This repository has been configured to run end-to-end tests using `Testcafe`. Visualization test is also configured through `Percy` and the tests run through `Testcafe`.
 
-To set up `Percy`, you will need a token on Percy's dashboard:
-
-- For local development, type `export PERCY_TOKEN=<PERCY_TOKEN>` before running `npm run integration`.
-- For [**CircleCI**](https://docs.percy.io/docs/circleci), add an environment variable `PERCY_TOKEN` with the token value.
+To set up `Percy`, you will need a token on Percy's dashboard. For local development, type `export PERCY_TOKEN=<PERCY_TOKEN>` before running `npm run integration`.
+  
 
 ## Features
 - [**Babel**](https://babeljs.io/) - With this tool, you can write next-generation JavaScript.
-- [**CircleCI**](https://circleci.com/) - It automates tests and linting for every push or pull request.
 - [**Debug**](https://github.com/visionmedia/debug) - A JS debugging utility that works in both node.js and browsers
 - [**Emotion**](https://emotion.sh/) - A library designed for writing CSS with JavaScript
 - [**ESLint**](http://eslint.org/) - With this tool, you write quality code.
