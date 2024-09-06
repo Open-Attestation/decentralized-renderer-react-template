@@ -5,15 +5,15 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "@govtechsg/decentralized-renderer-react-components": "^3.8.0",
+    "@emotion/core": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@govtechsg/decentralized-renderer-react-components": "^3.10.0",
     "@govtechsg/open-attestation": "^6.5.1",
     "@hot-loader/react-dom": "^16.11.0",
     "debug": "4.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-hot-loader": "^4.12.18"
+    "react-hot-loader": "^4.13.1"
   },
   "scripts": {
     "build": "npm run check-types && cross-env NODE_ENV=production webpack --progress --mode production",
